@@ -31,6 +31,6 @@ require_once __DIR__ . '/includes/header.php';
     <button class="btn btn-block btn-lg" type="submit">Login</button>
   </form>
   <p class="center mt">No account? <a href="<?= url('register.php') ?>"><b>Register here</b></a></p>
-  <p class="demo-box"><b>Demo accounts</b> (password: <code>password</code>)<br>admin@agrichain.rw · habimana@agrichain.rw (farmer)<br>kigalifresh@agrichain.rw (buyer) · inspector@agrichain.rw</p></div>
+  <!--<p class="demo-box"><b>Demo accounts</b> (password: <code>password</code>)<br>admin@agrichain.rw · habimana@agrichain.rw (farmer)<br>kigalifresh@agrichain.rw (buyer) · inspector@agrichain.rw</p>--></div>
 </div></section>
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
