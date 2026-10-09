@@ -1,7 +1,3 @@
--- AGRICHAIN RWANDA DATABASE
-CREATE DATABASE IF NOT EXISTS agrichain_rwanda CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE agrichain_rwanda;
-
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS notifications;
 DROP TABLE IF EXISTS supply_chain;

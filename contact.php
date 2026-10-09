@@ -19,7 +19,7 @@ require_once __DIR__ . '/includes/header.php';
 <section class="page-banner"><div class="container"><h1>Contact Us</h1><p>We would love to hear from you.</p></div></section>
 <section class="section"><div class="container two-col">
   <div class="info-box"><h3>Get in touch</h3>
-    <p>📍 Kigali, Rwanda</p><p>📧 info@agrichain.rw</p><p>📞 +250 791875132</p><p>🕒 Mon - Fri, 8:00 AM - 17:00 PM</p></div>
+    <p>📍 Kigali, Rwanda</p><p>📧 info@agrichain.rw</p><p>📞 +250 791875132</p><p>🕒 Mon - Fri, 8:00- 17:00</p></div>
   <form method="ost" class="form-card" data-validate>
     <?php foreach ($errors as $er): ?><p class="alert alert-error"><?= e($er) ?></p><?php endforeach; ?>
     <?= csrf_field() ?>

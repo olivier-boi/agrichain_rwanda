@@ -1,17 +1,18 @@
 <?php
-// config/database.php - connects PHP to MySQL and defines the site URL.
-$db_host = "localhost";
-$db_user = "root";   // default XAMPP user
-$db_pass = "";       // default XAMPP password is empty
-$db_name = "agrichain_rwanda";
+// Fetch credentials securely from Render's Environment
+$host     = getenv('DB_HOST');
+$port     = getenv('DB_PORT')     ?: '3306';
+$user     = getenv('DB_USER');
+$password = getenv('DB_PASSWORD');
+$dbname   = getenv('DB_NAME');
 
-// If you use another folder name or port, change this line.
-define('BASE_URL', '/agrichain-rwanda/');
+// Establish connection without crashing the page silently
+$conn = @mysqli_connect($host, $user, $password, $dbname, $port);
 
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-try {
-    $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
-    $conn->set_charset("utf8mb4");
-} catch (mysqli_sql_exception $ex) {
-    die("<h3>Database connection failed.</h3><p>Start MySQL in XAMPP and import database/agrichain_rwanda.sql.</p><small>" . htmlspecialchars($ex->getMessage()) . "</small>");
+// If it fails online, it will print a visible message instead of a blank screen
+if (!$conn) {
+    echo "<div style='color:red; padding:20px; background:#fff3f3;'>";
+    echo "<strong>Production Database Connection Error:</strong> " . mysqli_connect_error();
+    echo "</div>";
 }
+?>
